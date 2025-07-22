@@ -41,6 +41,7 @@ function UsersTable() {
                         <th>Id</th>
                         <th>Name</th>
                         <th>Email</th>
+                        <th>Actions</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -50,12 +51,26 @@ function UsersTable() {
                                 <td>{user.id}</td>
                                 <td>{user.name}</td>
                                 <td>{user.email}</td>
+                                <td>
+                                    <Button
+                                        variant="warning"
+                                        onClick={() => handleEditUser(user)}
+                                    >
+                                        Edit
+                                    </Button>&nbsp;&nbsp;&nbsp;
+                                    <Button
+                                        variant="danger"
+                                        onClick={() => handleDelete(user)}
+                                    >
+                                        Delete
+                                    </Button>
+                                </td>
                             </tr>)
                     })}
 
                 </tbody>
             </Table>
-             <UserCreateModal
+            <UserCreateModal
                 isOpenCreateModal={isOpenCreateModal}
                 setIsOpenCreateModal={setIsOpenCreateModal}
             />
