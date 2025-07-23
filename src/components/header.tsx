@@ -22,7 +22,7 @@ function Header() {
                     <Form>
                         <Form.Check
                             value={mode}
-                            onChange={(e) => dispatch(changeMode(e.target.value === 'light' ? 'dark' : 'light'))}
+                            onChange={(e) => dispatch(changeMode(e.target.checked === true ? 'dark' : 'light'))}
                             type='switch'
                             id='custom-switch'
                             label={mode === 'light' ? <Navbar.Text>Light mode</Navbar.Text> : <Navbar.Text>Dark mode</Navbar.Text>}
